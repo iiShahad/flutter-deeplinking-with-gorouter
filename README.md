@@ -1,16 +1,21 @@
-# deeplinks_with_gorouter
+# Deep Links with GoRouter
 
-A new Flutter project.
+This document provides instructions on how to navigate within the app using deep links through ADB (Android Debug Bridge).
 
-## Getting Started
+## Navigating to the Main Screen
 
-This project is a starting point for a Flutter application.
+To navigate to the main screen of the app using ADB, open your terminal and execute the following command:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+adb shell "am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d myapp://shahad.com"
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Navigating to the Details Screen
+
+To navigate to a details screen within the app, use the following ADB command. Replace :itemId with the specific ID you want to navigate to:
+
+```bash
+adb shell "am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE -d myapp://shahad.com/details/:itemId"
+
+```
